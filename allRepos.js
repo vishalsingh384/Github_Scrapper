@@ -37,7 +37,7 @@ function getAllReposLink(html){
         let fullLink="https://www.github.com"+relativeLink+"/issues";
         // console.log(fullLink);
         // console.log(repoFolderPath);
-        issues.getIssue(fullLink);
+        issues.getIssue("link->"+fullLink);
     }
 }
 
