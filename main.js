@@ -20,7 +20,7 @@ function handleHTML(html){
     let selecTool=cheerio.load(html);
     let anchorElem=selecTool('.no-underline.flex-1.d-flex.flex-column');
     // console.log(anchorElem.text());
-    for(let i=0;i<1;i++){
+    for(let i=0;i<3;i++){
         let relativeLink=selecTool(anchorElem[i]).attr("href");
         // console.log(relativeLink+"\n");
         let fullLink="https://www.github.com"+relativeLink;

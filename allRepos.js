@@ -36,12 +36,11 @@ function getAllReposLink(html){
         }
         let fullLink="https://www.github.com"+relativeLink+"/issues";
         // console.log(fullLink);
-        // console.log(repoFolderPath);
-        issues.getIssue("link->"+fullLink);
+        // console.log("before->"+repoFolderPath);
+        issues.getIssue(fullLink,repoFolderPath,repoName);
+        // console.log("after->"+repoFolderPath);
     }
 }
-
-
 
 module.exports={
     getAllRepos:getAllRepos,
