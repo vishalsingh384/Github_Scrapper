@@ -17,7 +17,7 @@ function handleHTML(html){
     console.log("done");
     let selecTool=cheerio.load(html);
     let anchorElem=selecTool('.no-underline.flex-1.d-flex.flex-column');
-    for(let i=0;i<3;i++){
+    for(let i=0;i<1;i++){
         let relativeLink=selecTool(anchorElem[i]).attr("href");//getting the RL of each topic(3d, Ajax, Algo)
         let fullLink="https://www.github.com"+relativeLink;
         // console.log(fullLink);

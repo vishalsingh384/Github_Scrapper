@@ -17,8 +17,10 @@ function getIssue(url,rPath){
         let issueArr=selecTool('a[data-hovercard-type="issue"]');
         let p=path.join(repoPath,"issues.pdf");
         let count=0;
+        let y=0;
         console.log("path->"+p);
         const doc = new jsPDF();//pdf doc creation
+        doc.setFontSize(12);
         for(let i=0;i<5;i++){
             count+=20;
             let issue=selecTool(issueArr[i]).text().trim();
