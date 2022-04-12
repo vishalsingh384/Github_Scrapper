@@ -7,7 +7,6 @@ const fs=require("fs");
 function getAllRepos(url){
     request(url,cb);
 }
-// request(url,cb);
 
 function cb(err,res,body){
     if(err){
@@ -24,9 +23,10 @@ function getAllReposLink(html){
     if(!fs.existsSync(topicFolderPath)){
        fs.mkdirSync(topicFolderPath);
     }
-    let repo=selecTool(".text-bold.wb-break-word");
-    console.log(repo.length);
-    // let repoArr=[];
+
+    let repo=selecTool(".text-bold.wb-break-word");//fetching all repositories
+    // console.log(repo.length);
+
     for(let i=0;i<8;i++){
         let relativeLink=selecTool(repo[i]).attr("href");
         let repoName=selecTool(repo[i]).text().trim();
@@ -34,15 +34,11 @@ function getAllReposLink(html){
         if(!fs.existsSync(repoFolderPath)){
            fs.mkdirSync(repoFolderPath);
         }
-        let fullLink="https://www.github.com"+relativeLink+"/issues";
-        // console.log(fullLink);
-        // console.log("before->"+repoFolderPath);
-        issues.getIssue(fullLink,repoFolderPath,repoName);
-        // console.log("after->"+repoFolderPath);
+        let fullLink="https://www.github.com"+relativeLink+"/issues";//link to the respective issues page
+        issues.getIssue(fullLink,repoFolderPath);
     }
 }
 
 module.exports={
-    getAllRepos:getAllRepos,
-    getAllReposLink:getAllReposLink,
+    getAllRepos:getAllRepos
 }
